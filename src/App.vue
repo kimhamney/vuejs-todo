@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <nav>
+    <router-link :to="{ name: 'TodoHome' }" class="logo">
+      <span class="material-icons">eco</span>
+    </router-link>
+    <router-link :to="{ name: 'TodoInput' }">Todo</router-link>
+  </nav>
+  <router-view />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "nanumburi";
+  src: url("assets/MaruBuri-Regular.woff2") format("woff2");
+}
+
+body {
+  font-family: "nanumburi";
+  margin: 0 auto;
+  padding: 0;
+}
+
+nav {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  padding: 10px;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo {
+  float: left;
+  width: 0;
 }
 </style>
